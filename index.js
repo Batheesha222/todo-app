@@ -16,6 +16,14 @@ mongoose
   //view engin
 app.set("view engine", "ejs");
 
+app.get("/add-todo", (req,res,next)=>{
+    try {
+        res.render("newtodo")
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+})
+
 app.get("/", (req,res,next)=>{
     try {
         res.render("index")
