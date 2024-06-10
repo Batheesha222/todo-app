@@ -40,6 +40,14 @@ app.get("/update-todo", (req,res,next)=>{
     }
 })
 
+app.get("/delete-todo", (req,res,next)=>{
+    try {
+        res.render("deleteTodo")
+    } catch (error) {
+        res.status(500).json({message:error.message})
+    }
+})
+
 // listen sever
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`)
